@@ -35,8 +35,8 @@ CREATE TABLE affiliation(
 CREATE TABLE personnage(
     idPersonnage INT UNSIGNED NOT NULL,
     idAffiliation INT UNSIGNED ,
-    idRegion INT UNSIGNED NOT NULL,
-    constellation VARCHAR(255) NOT NULL,
+    idRegion INT UNSIGNED,
+    constellation VARCHAR(255),
     PRIMARY KEY (idPersonnage),
     CONSTRAINT fk_personnage_entite FOREIGN KEY (idPersonnage) REFERENCES entite(id) ON DELETE CASCADE,
     CONSTRAINT fk_personnage_region FOREIGN KEY (idRegion) REFERENCES region(id),
