@@ -31,8 +31,8 @@ Créer l'entité ici en premier pour générer son `id`.
 | :--- | :--- | :--- | :--- |
 | `idPersonnage` | `INT UNSIGNED` | **PK**, **FK** (`entite.id`) | Le même ID que dans la table `entite`. |
 | `idAffiliation` | `INT UNSIGNED` | **FK** (`affiliation.id`), `NULL` | Optionnel (peut être laissé vide). |
-| `idRegion` | `INT UNSIGNED` | **FK** (`region.id`), `NOT NULL` | La région d'appartenance. |
-| `constellation` | `VARCHAR(255)` | `NOT NULL` | Nom de la constellation. |
+| `idRegion` | `INT UNSIGNED` | **FK** (`region.id`) | La région d'appartenance. |
+| `constellation` | `VARCHAR(255)` | | Nom de la constellation. |
 ## 6. Table `histoire` (Lore)
 | Colonne | Type | Contraintes | Description |
 | :--- | :--- | :--- | :--- |

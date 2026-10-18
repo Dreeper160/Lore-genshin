@@ -12,7 +12,7 @@ constellation: Ampulla
 
 
 */
--- Initial values
+-- Initial values (sucrose)
 INSERT into entite(typeEntite) VALUES ('personnage');
 INSERT INTO nom VALUES(1 ,'Sucrose', 'fr');
 INSERT INTO nom VALUES(1 ,'Sucrose', 'en');
@@ -27,6 +27,9 @@ INSERT INTO region(id) VALUES(2);
 INSERT INTO Affiliation(id) VALUES(3);
 -- Personnage
 INSERT INTO personnage (idPersonnage,idAffiliation,idRegion,constellation) VALUES(1,3,2,'Ampulla');
+
+--Voyageur 
+
 -- VERSION FRANÇAISE
 
 INSERT INTO histoire(idEntite, langue,ordre,categorie,moment,texte,source)
@@ -81,3 +84,13 @@ INSERT INTO histoire(idEntite, langue,ordre,categorie,moment,texte,source)
 VALUES(1,'en',5,'passe','avant_aq',
 'To honor her former friendship, Sucrose discovered alchemy in a book. She realized she could create her own paradise and began studying bio-alchemy with all her curiosity and passion.',
 'https://genshin-impact.fandom.com/wiki/Sucrose/Profile');
+
+/*-- Voyageur 
+
+INSERT into entite(typeEntite) VALUES ('personnage');
+INSERT INTO nom VALUES(LAST_INSERT_ID() ,'Voyageur(euse)', 'fr');
+INSERT INTO nom VALUES(LAST_INSERT_ID() ,'Traveler', 'en');
+-- Personnage
+INSERT INTO personnage (idPersonnage,idAffiliation,idRegion,constellation) VALUES(
+    (SELECT idEntite from nom where entiteNom='Traveler'),NULL,NULL,'Viator(Viatrix)');
+    */
