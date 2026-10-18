@@ -30,7 +30,9 @@ Requires MySQL 8.0 or later (the script uses a collation introduced in 8.0).
 mysql -u <user> -p < db/<schema-file>.sql
 ```
 
-Warning: the script drops existing tables of the `genshinlore` database before recreating them.
+Warning: the script drops existing tables of the `genshinlore` database before recreating them. 
+** Character encoding (Windows) ** . The SQL files are saved as UTF-8 and start with SET NAMES utf8mb4;
+* Keep that line at the top of any file that contains accents or special characters. The Windows console may still display accents incorrectly even though the data is stored correctly. MySQL Workbench displays them properly.
 
 ## Database
 
@@ -43,7 +45,7 @@ Details and diagram: `docs/schema.md`.
 ## Roadmap
 
 - [x] Phase 0: scoping
-- [ ] Phase 1: database (schema done, starter data and queries to do)
+- [X] Phase 1: database (schema done, starter data and queries to do) (for the test I only use Sucrose)
 - [ ] Phase 2: C core
 - [ ] Phase 3: consolidation
 - [ ] Phase 4: HTTP API
