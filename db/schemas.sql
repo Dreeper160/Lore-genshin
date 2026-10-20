@@ -16,7 +16,7 @@ CREATE TABLE entite(
     PRIMARY KEY (id)
 )Comment 'Parent table of the entity hierarchy. Every character, region and affiliation has one row here, and its child table reuses the same id. Known limit: nothing forces an entity to have a name in nom';
 CREATE TABLE nom(
-    idEntite int UNSIGNED,
+    idEntite int UNSIGNED NOT NULL,
     entiteNom varchar(255) NOT NULL,
     langue ENUM('fr','en') DEFAULT 'fr' NOT NULL,
     PRIMARY KEY (idEntite,langue),
