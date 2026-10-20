@@ -1,4 +1,3 @@
-Restricition : même ordre = même morceau dans toutes les langues
 
 TABLES : 
 # Structure de la Base de Données : Genshin Lore
@@ -16,8 +15,8 @@ Créer l'entité ici en premier pour générer son `id`.
 | Colonne | Type | Contraintes | Description |
 | :--- | :--- | :--- | :--- |
 | `idEntite` | `INT UNSIGNED` | **PK**, **FK** (`entite.id`) | ID de l'entité parente. |
-| `langue` | `ENUM` | **PK**, `NOT NULL`, `DEFAULT 'fr'` | Choix : `'fr'`, `'en'`. |
 | `entiteNom` | `VARCHAR(255)` | `NOT NULL` | Le nom traduit. |
+| `langue` | `ENUM` | **PK**, `NOT NULL`, `DEFAULT 'fr'` | Choix : `'fr'`, `'en'`. |
 ## 3. Table `region` (Enfant)
 | Colonne | Type | Contraintes | Description |
 | :--- | :--- | :--- | :--- |
