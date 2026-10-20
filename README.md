@@ -33,14 +33,16 @@ mysql -u <user> -p < db/<schema-file>.sql
 Warning: the script drops existing tables of the `genshinlore` database before recreating them. 
 ** Character encoding (Windows) ** . The SQL files are saved as UTF-8 and start with SET NAMES utf8mb4;
 * Keep that line at the top of any file that contains accents or special characters. The Windows console may still display accents incorrectly even though the data is stored correctly. MySQL Workbench displays them properly.
+* Before doing anything, for the instance the `db/schema.sql` must me executed first.
 
 ## Database
 
 - `entite` is the parent table. `personnage`, `region` and `affiliation` are children that reuse its id.
 - `nom` stores one name per entity and language.
 - `histoire` stores one lore piece per row, per language. The same `ordre` means the same piece in every language.
+- Some tables may be introduced later.
 
-Details and diagram: `docs/schema.md`.
+Details and diagram: `docs/schema/schemas.md`.
 
 ## Roadmap
 
