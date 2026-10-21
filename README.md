@@ -40,10 +40,13 @@ Warning: the script drops existing tables of the `genshinlore` database before r
 - `entite` is the parent table. `personnage`, `region` and `affiliation` are children that reuse its id.
 - `nom` stores one name per entity and language.
 - `histoire` stores one lore piece per row, per language. The same `ordre` means the same piece in every language.
-- Some tables may be introduced later.
+- Some tables may be introduced or modify later.
+
 
 Details and diagram: `docs/schema/schemas.md`.
-
+## C Core
+Before starting to use the C Core, you must create a user who can only have action our database.
+The file to create this user is intentionally not included due to some security reason.
 ## Roadmap
 
 - [x] Phase 0: scoping
