@@ -47,6 +47,7 @@ Details and diagram: `docs/schema/schemas.md`.
 ## C Core
 Before starting to use the C Core, you must create a user who can only have action our database.
 The file to create this user is intentionally not included due to some security reason.
+Also create create an Environement variable for more safety
 ## Roadmap
 
 - [x] Phase 0: scoping
