@@ -45,9 +45,10 @@ Warning: the script drops existing tables of the `genshinlore` database before r
 
 Details and diagram: `docs/schema/schemas.md`.
 ## C Core
-Before starting to use the C Core, you must create a user who can only have action our database.
-The file to create this user is intentionally not included due to some security reason.
-Also create create an Environement variable for more safety
+- Before starting to use the C Core, you must create a user who can only have action our database.
+- The file to create this user is intentionally not included due to some security reason.
+
+- In order to compile the program, an environment varibale have to be created in the same terminal, the program is compilated. `$env:GENSHINLORE_PASSWORD = 'YOURPASSWORD'`(Warning: it is only valid for the active session )
 ## Roadmap
 
 - [x] Phase 0: scoping
