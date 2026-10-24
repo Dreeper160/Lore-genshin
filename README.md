@@ -52,8 +52,8 @@ Details and diagram: `docs/schema/schemas.md`.
 ## Roadmap
 
 - [x] Phase 0: scoping
-- [X] Phase 1: database (schema done, starter data and queries to do) (for the test I only use Sucrose)
-- [ ] Phase 2: C core
+- [X] Phase 1: database (schema done, starter data and queries to do)
+- [ ] Phase 2: C core (WIP)
 - [ ] Phase 3: consolidation
 - [ ] Phase 4: HTTP API
 - [ ] Phase 5: web frontend
