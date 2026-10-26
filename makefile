@@ -1,6 +1,6 @@
 
 CC = gcc
-
+#
 # Directories
 SRC_DIR = src
 BUILD_DIR = build
@@ -12,7 +12,7 @@ CFLAGS = -Wall -Wextra -Werror -Iinclude
 # Librairies
 LDLIBS = -lmariadb
 
-# Automatic retrieval of source files
+# Automatic retrieval of source files (I hate make)
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
 
