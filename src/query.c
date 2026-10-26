@@ -9,7 +9,7 @@ void print_res(MYSQL_RES *result)
     unsigned int field_nb = mysql_num_fields(result);
     MYSQL_FIELD *champs = mysql_fetch_fields(result);
 
-    printf("\n=== HEAD LINES ===\n");
+    printf("\n=== HEADLINES ===\n");
     for (unsigned int i = 0; i < field_nb; i++)
     {
         printf("%-30s", champs[i].name);
@@ -18,7 +18,6 @@ void print_res(MYSQL_RES *result)
     MYSQL_ROW line;
     unsigned long total_lines = 0;
 
-    // Boucle principale : parcourt les lignes une par une
     while ((line = mysql_fetch_row(result)))
     {
         total_lines++;
@@ -35,7 +34,7 @@ void print_res(MYSQL_RES *result)
                 printf("%-30s", line[i]);
             }
         }
-        printf("\n"); // Fin de la ligne, passage à la suivante
+        printf("\n");
     }
     printf("--------------------------------------------------------\n");
     printf("Total : %lu line(s) returned .\n\n", total_lines);
@@ -74,8 +73,6 @@ void print_name_language(MYSQL *conn)
 {
     char query[1024];
     int len = snprintf(query, sizeof(query), "SELECT entiteNom, langue FROM nom WHERE langue = 'fr'");
-
-    // Sécurité snprintf
 
     if (sizeof(len) >= sizeof(query))
     {
