@@ -3,7 +3,7 @@ void print_res(MYSQL_RES *result)
 {
     if (result == NULL)
     {
-        printf("No rows returned");
+        printf("No rows returned\n");
         return;
     }
     unsigned int field_nb = mysql_num_fields(result);
@@ -27,7 +27,7 @@ void print_res(MYSQL_RES *result)
 
             if (line[i] == NULL)
             {
-                printf("%-30s", "[NULL]t");
+                printf("%-30s", "[NULL]");
             }
             else
             {
@@ -74,7 +74,7 @@ void print_name_language(MYSQL *conn)
     char query[1024];
     int len = snprintf(query, sizeof(query), "SELECT entiteNom, langue FROM nom WHERE langue = 'fr'");
 
-    if (sizeof(len) >= sizeof(query))
+    if (len < 0 || (size_t)len >= sizeof(query))
     {
         fprintf(stderr, "Error: Query buffer overflow\n");
         return;

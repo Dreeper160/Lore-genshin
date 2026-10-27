@@ -4,13 +4,13 @@
 #include <stdlib.h>
 #include <mysql/mysql.h>
 /**
- * @brief
+ * @brief Show how many entity is in the table entity.
  *
  * @param conn Mysql connection
  */
 void nombre_entite(MYSQL *conn);
 /**
- * @brief
+ * @brief print the name of a specified language and the language
  *
  * @param conn Mysql connection
  */

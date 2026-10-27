@@ -5,10 +5,13 @@ int main(void)
     const char *mot_de_passe = getenv("GENSHINLORE_PASSWORD");
     if (mot_de_passe == NULL)
     {
-        fprintf(stderr, "Variable GENSHINLORE_PASSWORD not defined\n");
+        }
+    MYSQL *conn = mysql_init(NULL);
+    if ((conn) == NULL)
+    {
+        fprintf(stderr, "Unable to intitalize connection\n");
         return 1;
     }
-    MYSQL *conn = mysql_init(NULL);
     mysql_options(conn, MYSQL_SET_CHARSET_NAME, "utf8mb4");
     if (mysql_real_connect(conn, "localhost", "Ulrich", mot_de_passe, "genshinlore", 0, NULL, 0) == NULL)
     {

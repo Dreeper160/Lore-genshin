@@ -1,39 +1,39 @@
-
 CC = gcc
+SHELL = cmd.exe
 
 # Directories
 SRC_DIR = src
 BUILD_DIR = build
 TARGET = $(BUILD_DIR)/genshinlore.exe
-
 # Compilation flags
-CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS = -Wall -Wextra -Werror -Iinclude -g
 
-# Librairies
+# Libraries
 LDLIBS = -lmariadb
 
-# Automatic retrieval of source files
+# Automatically find source files
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
 
 # Main target
 all: $(TARGET)
 
-# link editiion
+# Link the executable
 $(TARGET): $(OBJS)
 	$(CC) $(OBJS) -o $@ $(LDFLAGS) $(LDLIBS)
 
-
+# Compile source files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Create compilation file
+# Create the build directory
 $(BUILD_DIR):
-	mkdir -p $(BUILD_DIR)
+	if not exist "$(BUILD_DIR)" mkdir "$(BUILD_DIR)"
 
-# clean up
+# Clean up build files
 clean:
-	rm -rf $(BUILD_DIR)
+	if exist "$(BUILD_DIR)" rmdir /S /Q "$(BUILD_DIR)"
+
 
 # Complete recompilation
 re: clean all
