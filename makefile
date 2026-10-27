@@ -1,5 +1,4 @@
 CC = gcc
-SHELL = cmd.exe
 
 # Directories
 SRC_DIR = src
@@ -11,7 +10,7 @@ CFLAGS = -Wall -Wextra -Werror -Iinclude -g
 # Libraries
 LDLIBS = -lmariadb
 
-# Automatically find source files
+# Automatic retrieval of source files (I hate make)
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
 
